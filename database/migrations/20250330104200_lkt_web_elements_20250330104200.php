@@ -40,7 +40,7 @@ class LKtWebElements20250330104200 extends AbstractMigration
             ->addColumn('type', 'string', ['limit' => 250])
             ->addColumn('component', 'string', ['limit' => 250])
 
-            ->addColumn('parent_id', 'integer', ['identity' => true, 'limit' => MysqlAdapter::INT_REGULAR])
+            ->addColumn('parent_id', 'integer', ['limit' => MysqlAdapter::INT_REGULAR])
             ->addColumn('parent_component', 'string', ['limit' => 250])
 
             ->addColumn('props', 'text', ['null' => true, 'default' => null])

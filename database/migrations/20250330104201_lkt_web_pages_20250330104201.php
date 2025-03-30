@@ -43,7 +43,7 @@ class LKtWebPages20250330104201 extends AbstractMigration
             ->addColumn('summary', 'json')
             ->addColumn('slug', 'json')
 
-            ->addColumn('parent_id', 'integer', ['identity' => true, 'limit' => MysqlAdapter::INT_REGULAR])
+            ->addColumn('parent_id', 'integer', ['limit' => MysqlAdapter::INT_REGULAR])
             ->addColumn('parent_component', 'string', ['limit' => 250])
 
             ->addColumn('seo_title', 'json')
