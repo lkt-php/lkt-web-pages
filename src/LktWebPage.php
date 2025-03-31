@@ -23,11 +23,16 @@ class LktWebPage extends GeneratedLktWebPage
 
     private static function ensureWebElement(array &$webElement)
     {
-        if ($webElement['type'] === 'text' && !isset($webElement['props']['text'])) {
-            $webElement['props']['text'] = [
-                'en' => '',
-                'es' => '',
-            ];
+        if ($webElement['type'] === 'lkt-text') {
+            if (!isset($webElement['props']) || !is_array($webElement['props'])) {
+                $webElement['props'] = [];;
+            }
+            if (!isset($webElement['props']['text']) || !is_array($webElement['props'])) {
+                $webElement['props']['text'] = [
+                    'en' => '',
+                    'es' => '',
+                ];
+            }
         }
     }
 
