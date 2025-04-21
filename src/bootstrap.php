@@ -5,6 +5,8 @@ namespace Lkt\WebPages;
 use Lkt\Factory\Schemas\Schema;
 use Lkt\Phinx\PhinxConfigurator;
 
+require_once __DIR__ . '/functions/functions.php';
+
 /**
  * Load Schemas
  */
