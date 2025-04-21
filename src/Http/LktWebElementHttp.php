@@ -59,7 +59,7 @@ class LktWebElementHttp
         if ($instance->isAnonymous()) return Response::notFound();
 
         return Response::ok([
-            'item' => $instance->read()['children'],
+            'results' => $instance->read()['children'],
             'perms' => ['update']
         ]);
     }
