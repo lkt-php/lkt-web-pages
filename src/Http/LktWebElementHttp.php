@@ -49,7 +49,7 @@ class LktWebElementHttp
 
         return Response::ok([
             'item' => $instance->read(),
-            'perms' => ['update']
+            'perms' => ['update', 'drop']
         ]);
     }
 
