@@ -8,12 +8,15 @@ class WebElementType
     const LktTextBox = 'lkt-text-box';
     const LktLayoutAccordion = 'lkt-layout-accordion';
     const LktTextAccordion = 'lkt-text-accordion';
+    const LktTextBanner = 'lkt-text-banner';
+    const LktLayoutBanner = 'lkt-layout-banner';
     const LktText = 'lkt-text';
     const LktLayout = 'lkt-layout';
     const LktAnchor = 'lkt-anchor';
     const LktButton = 'lkt-button';
     const LktHeader = 'lkt-header';
     const LktIcon = 'lkt-icon';
+    const LktIcons = 'lkt-icons';
     const LktImage = 'lkt-image';
 
     const Types = [

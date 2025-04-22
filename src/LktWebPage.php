@@ -13,28 +13,7 @@ class LktWebPage extends GeneratedLktWebPage
     public function read()
     {
         $fields = Schema::get(static::COMPONENT)->getAllFields();
-        $r = $this->readFields($fields);
-
-        foreach ($r['webElements'] as &$webElement) {
-            static::ensureWebElement($webElement);
-        }
-
-        return $r;
-    }
-
-    private static function ensureWebElement(array &$webElement)
-    {
-        if ($webElement['type'] === 'lkt-text') {
-            if (!isset($webElement['props']) || !is_array($webElement['props'])) {
-                $webElement['props'] = [];;
-            }
-            if (!isset($webElement['props']['text']) || !is_array($webElement['props'])) {
-                $webElement['props']['text'] = [
-                    'en' => '',
-                    'es' => '',
-                ];
-            }
-        }
+        return $this->readFields($fields);
     }
 
     public function doCreate(array $data): static

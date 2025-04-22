@@ -47,6 +47,7 @@ class LKtWebElements20250330104200 extends AbstractMigration
             ->addColumn('config', 'text', ['null' => true, 'default' => null])
             ->addColumn('layout', 'text', ['null' => true, 'default' => null])
             ->addColumn('children', 'text', ['null' => true, 'default' => null])
+            ->addColumn('sub_elements', 'text', ['null' => true, 'default' => null])
         ;
 
         $table->create();

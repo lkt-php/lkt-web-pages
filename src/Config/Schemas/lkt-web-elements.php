@@ -27,6 +27,7 @@ return Schema::table('lkt_web_elements', LktWebElement::COMPONENT)
         'config',
         'layout',
         'children',
+        'subElements',
     ])
     ->addField(IdField::define('id'))
     ->addField(
@@ -44,6 +45,7 @@ return Schema::table('lkt_web_elements', LktWebElement::COMPONENT)
     ->addField(AssocJSONField::define('props'))
     ->addField(AssocJSONField::define('config'))
     ->addField(AssocJSONField::define('layout'))
+    ->addField(AssocJSONField::define('subElements', 'sub_elements'))
     ->addField(
         ForeignKeysField::defineRelation(LktWebElement::COMPONENT, 'children')
     )
