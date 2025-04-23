@@ -66,6 +66,12 @@ class LktWebElement extends GeneratedLktWebElement
                     'es' => '',
                 ];
             }
+            if (!isset($webElement['props']['subHeader']) || !is_array($webElement['props']['subHeader'])) {
+                $webElement['props']['subHeader'] = [
+                    'en' => '',
+                    'es' => '',
+                ];
+            }
         }
     }
 
