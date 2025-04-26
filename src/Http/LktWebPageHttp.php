@@ -9,6 +9,36 @@ use function Lkt\Tools\Parse\clearInput;
 
 class LktWebPageHttp
 {
+    public static function index(array $params): Response
+    {
+        $queryBuilder = LktWebPage::getQueryCaller();
+
+        if (isset($params['type'])) {
+            $type = (int)clearInput($params['type']);
+            $queryBuilder->andTypeEqual($type);
+        }
+
+        if (isset($params['page'])) {
+            $page = (int)clearInput($params['page']);
+
+            if (isset($params['itemsPerPage'])) {
+                $itemsPerPage = (int)clearInput($params['itemsPerPage']);
+                $queryBuilder->pagination($page, $itemsPerPage);
+            }
+
+            $results = LktWebPage::getPage($page, $queryBuilder);
+        } else {
+            $results = LktWebPage::getMany($queryBuilder);
+        }
+
+
+        $response = [];
+        foreach ($results as $result) $response[] = $result->read();
+
+        return Response::ok([
+            'results' => $response,
+        ]);
+    }
     public static function create(array $params): Response
     {
         $instance = LktWebPage::getInstance();

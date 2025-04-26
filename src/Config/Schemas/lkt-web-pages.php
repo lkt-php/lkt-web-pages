@@ -6,6 +6,7 @@ use Lkt\Factory\Schemas\Fields\AssocJSONField;
 use Lkt\Factory\Schemas\Fields\DateTimeField;
 use Lkt\Factory\Schemas\Fields\ForeignKeysField;
 use Lkt\Factory\Schemas\Fields\IdField;
+use Lkt\Factory\Schemas\Fields\IntegerField;
 use Lkt\Factory\Schemas\Fields\StringChoiceField;
 use Lkt\Factory\Schemas\Fields\StringField;
 use Lkt\Factory\Schemas\InstanceSettings;
@@ -68,6 +69,8 @@ return Schema::table('lkt_web_pages', LktWebPage::COMPONENT)
     ->addField(StringField::define('slug')->setIsI18nJson())
 
     ->addField(StringField::define('seoTitle', 'seo_title')->setIsI18nJson())
+
+    ->addField(IntegerField::define('type'))
 
     ->addField(AssocJSONField::define('nameData', 'name')->setIsI18nJson())
     ->addField(AssocJSONField::define('summaryData', 'summary')->setIsI18nJson())

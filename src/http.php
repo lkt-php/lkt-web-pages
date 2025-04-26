@@ -23,6 +23,9 @@ DeleteRoute::register('/web/element/{id}', [LktWebElementHttp::class, 'drop']);
 /**
  * Web Pages Routes
  */
+GetRoute::register('/web/pages', [LktWebPageHttp::class, 'index']);
+GetRoute::register('/web/pages/{type}', [LktWebPageHttp::class, 'index']);
+
 PostRoute::register('/web/page', [LktWebPageHttp::class, 'create']);
 GetRoute::register('/web/page/{id}', [LktWebPageHttp::class, 'read']);
 GetRoute::register('/web/page/{id}/children', [LktWebPageHttp::class, 'children']);
