@@ -40,10 +40,10 @@ return Schema::table('lkt_web_pages', LktWebPage::COMPONENT)
 //        'seoTitle',
     ])
     ->setExcludedFieldsForViewFeed('update', [
-        'name',
-        'summary',
-        'slug',
-        'seoTitle',
+//        'name',
+//        'summary',
+//        'slug',
+//        'seoTitle',
     ])
     ->addField(IdField::define('id'))
     ->addField(
