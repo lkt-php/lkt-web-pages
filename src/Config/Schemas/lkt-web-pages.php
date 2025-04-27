@@ -34,10 +34,10 @@ return Schema::table('lkt_web_pages', LktWebPage::COMPONENT)
         'children',
     ])
     ->setExcludedFieldsForViewFeed('create', [
-        'name',
-        'summary',
-        'slug',
-        'seoTitle',
+//        'name',
+//        'summary',
+//        'slug',
+//        'seoTitle',
     ])
     ->setExcludedFieldsForViewFeed('update', [
         'name',

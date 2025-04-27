@@ -3,6 +3,8 @@
 namespace Lkt\WebPages\Http;
 
 use Lkt\Http\Response;
+use Lkt\Locale\Locale;
+use Lkt\Translations\Translations;
 use Lkt\WebPages\LktWebElement;
 use Lkt\WebPages\LktWebPage;
 use function Lkt\Tools\Parse\clearInput;
@@ -37,6 +39,7 @@ class LktWebPageHttp
 
         return Response::ok([
             'results' => $response,
+            'perms' => ['create']
         ]);
     }
     public static function create(array $params): Response
@@ -57,7 +60,7 @@ class LktWebPageHttp
 
         return Response::ok([
             'item' => $instance->read(),
-            'perms' => ['update']
+            'perms' => ['update', 'drop']
         ]);
     }
 
