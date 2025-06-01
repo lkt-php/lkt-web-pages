@@ -60,7 +60,23 @@ class LktWebPageHttp
 
         return Response::ok([
             'item' => $instance->read(),
-            'perms' => ['update', 'drop']
+            'perms' => ['update', 'drop', 'switch-edit-mode']
+        ]);
+    }
+
+    public static function view(array $params): Response
+    {
+        $slug = $params['slug'];
+        $slug = explode('/', $slug);
+        $slug = $slug[count($slug) - 1];
+
+        $query = LktWebPage::getQueryCaller();
+        $query->andSlugEqual($slug)->andStatusIsPublic();
+        $instance = LktWebPage::getOne($query);
+        if (!$instance || $instance->isAnonymous()) return Response::notFound();
+
+        return Response::ok([
+            'item' => $instance->read(),
         ]);
     }
 

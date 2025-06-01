@@ -27,7 +27,8 @@ GetRoute::register('/web/pages', [LktWebPageHttp::class, 'index']);
 GetRoute::register('/web/pages/{type}', [LktWebPageHttp::class, 'index']);
 
 PostRoute::register('/web/page', [LktWebPageHttp::class, 'create']);
-GetRoute::register('/web/page/{id}', [LktWebPageHttp::class, 'read']);
-GetRoute::register('/web/page/{id}/children', [LktWebPageHttp::class, 'children']);
-PutRoute::register('/web/page/{id}', [LktWebPageHttp::class, 'update']);
-DeleteRoute::register('/web/page/{id}', [LktWebPageHttp::class, 'drop']);
+GetRoute::register('/web/page', [LktWebPageHttp::class, 'view']);
+GetRoute::register('/web/page/{id:\d+}', [LktWebPageHttp::class, 'read']);
+GetRoute::register('/web/page/{id:\d+}/children', [LktWebPageHttp::class, 'children']);
+PutRoute::register('/web/page/{id:\d+}', [LktWebPageHttp::class, 'update']);
+DeleteRoute::register('/web/page/{id:\d+}', [LktWebPageHttp::class, 'drop']);
