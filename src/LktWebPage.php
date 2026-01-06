@@ -16,18 +16,6 @@ class LktWebPage extends GeneratedLktWebPage
         return $this->readFields($fields);
     }
 
-    public function doCreate(array $data): static
-    {
-        LktWebPage::feedInstance($this, $data, 'create');
-        return $this->save();
-    }
-
-    public function doUpdate(array $data): static
-    {
-        LktWebPage::feedInstance($this, $data, 'update');
-        return $this->save();
-    }
-
     public function addWebElement(LktWebElement $element, int $before = 0, int $after = 0): static
     {
         $data = addWebElement($this->getWebElementsIds(), $element->getId(), $before, $after);

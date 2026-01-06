@@ -28,7 +28,7 @@ class LktWebElementHttp
         }
 
         $instance = LktWebElement::getInstance();
-        $instance->doCreate($params);
+        $instance->autoCreate($params);
 
 
         $beforeElement = (int)$params['beforeElement'];
@@ -37,7 +37,7 @@ class LktWebElementHttp
         $parent->addWebElement($instance, $beforeElement, $afterElement);
 
         return Response::ok([
-            'item' => $instance->read(),
+            'item' => $instance->autoRead(),
             'id' => $instance->getId(),
         ]);
     }
@@ -48,7 +48,7 @@ class LktWebElementHttp
         if ($instance->isAnonymous()) return Response::notFound();
 
         return Response::ok([
-            'item' => $instance->read(),
+            'item' => $instance->autoRead(),
             'perms' => ['update', 'drop']
         ]);
     }
@@ -59,7 +59,7 @@ class LktWebElementHttp
         if ($instance->isAnonymous()) return Response::notFound();
 
         return Response::ok([
-            'results' => $instance->read()['children'],
+            'results' => $instance->autoRead()['children'],
             'perms' => ['update']
         ]);
     }
@@ -68,7 +68,7 @@ class LktWebElementHttp
     {
         $instance = LktWebElement::getInstance((int)$params['id']);
         if ($instance->isAnonymous()) return Response::notFound();
-        $instance->doUpdate($params);
+        $instance->autoUpdate($params);
 
         return Response::ok([
             'id' => $instance->getId(),

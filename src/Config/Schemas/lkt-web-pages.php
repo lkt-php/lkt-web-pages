@@ -11,7 +11,6 @@ use Lkt\Factory\Schemas\Fields\StringChoiceField;
 use Lkt\Factory\Schemas\Fields\StringField;
 use Lkt\Factory\Schemas\InstanceSettings;
 use Lkt\Factory\Schemas\Schema;
-use Lkt\Factory\Schemas\Views\FieldViewConfig;
 use Lkt\WebPages\Enums\WebPageStatus;
 use Lkt\WebPages\LktWebElement;
 use Lkt\WebPages\LktWebPage;
@@ -24,7 +23,9 @@ return Schema::table('lkt_web_pages', LktWebPage::COMPONENT)
     )
     ->setItemsPerPage(20)
     ->setCountableField('id')
-    ->setFieldsForRelatedMode('id', 'component', [
+    ->setRelatedAccessPolicy([
+        'id' => 'value',
+        'component' => 'label',
         'id',
         'component',
         'type',
@@ -32,18 +33,6 @@ return Schema::table('lkt_web_pages', LktWebPage::COMPONENT)
         'config',
         'layout',
         'children',
-    ])
-    ->setExcludedFieldsForViewFeed('create', [
-//        'name',
-//        'summary',
-//        'slug',
-//        'seoTitle',
-    ])
-    ->setExcludedFieldsForViewFeed('update', [
-//        'name',
-//        'summary',
-//        'slug',
-//        'seoTitle',
     ])
     ->addField(IdField::define('id'))
     ->addField(

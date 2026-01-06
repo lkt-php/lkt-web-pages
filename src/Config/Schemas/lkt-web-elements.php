@@ -19,7 +19,9 @@ return Schema::table('lkt_web_elements', LktWebElement::COMPONENT)
     )
     ->setItemsPerPage(20)
     ->setCountableField('id')
-    ->setFieldsForRelatedMode('id', 'component', [
+    ->setRelatedAccessPolicy([
+        'id' => 'value',
+        'component' => 'label',
         'id',
         'component',
         'type',
