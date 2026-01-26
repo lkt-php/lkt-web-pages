@@ -2,17 +2,10 @@
 
 namespace Lkt\WebPages\Enums;
 
-class WebPageStatus
+enum WebPageStatus: int
 {
-    const Draft = 'draft';
-    const Public = 'public';
-    const Scheduled = 'scheduled';
-    const Confidential = 'confidential';
-
-    const Statuses = [
-        self::Draft,
-        self::Public,
-        self::Scheduled,
-        self::Confidential,
-    ];
+    case Public = 1;
+    case Draft = 2;
+    case Scheduled = 3;
+    case Confidential = 4;
 }

@@ -38,7 +38,7 @@ class LKtWebPages20250330104201 extends AbstractMigration
             ->addColumn('published_at', 'datetime', ['null' => true, 'default' => null, 'update' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_by', 'integer', ['default' => 0])
 
-            ->addColumn('status', 'string', ['limit' => 12])
+            ->addColumn('status', 'integer', ['limit' => 12])
             ->addColumn('name', 'json')
             ->addColumn('summary', 'json')
             ->addColumn('slug', 'json')

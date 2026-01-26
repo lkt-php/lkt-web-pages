@@ -6,6 +6,7 @@ use Lkt\Factory\Schemas\Fields\AssocJSONField;
 use Lkt\Factory\Schemas\Fields\DateTimeField;
 use Lkt\Factory\Schemas\Fields\ForeignKeysField;
 use Lkt\Factory\Schemas\Fields\IdField;
+use Lkt\Factory\Schemas\Fields\IntegerChoiceField;
 use Lkt\Factory\Schemas\Fields\IntegerField;
 use Lkt\Factory\Schemas\Fields\StringChoiceField;
 use Lkt\Factory\Schemas\Fields\StringField;
@@ -50,7 +51,7 @@ return Schema::table('lkt_web_pages', LktWebPage::COMPONENT)
             ->setDefaultReadFormat('Y-m-d')
             ->setCurrentTimeStampAsDefaultValue()
     )
-    ->addField(StringChoiceField::choice(WebPageStatus::Statuses, 'status'))
+    ->addField(IntegerChoiceField::enumChoice(WebPageStatus::class, 'status'))
     ->addField(StringField::define('name')->setIsI18nJson())
 
     ->addField(StringField::define('summary')->setIsI18nJson())
