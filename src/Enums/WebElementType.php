@@ -2,34 +2,20 @@
 
 namespace Lkt\WebPages\Enums;
 
-class WebElementType
+enum WebElementType: int
 {
-    const LktLayoutBox = 'lkt-layout-box';
-    const LktTextBox = 'lkt-text-box';
-    const LktLayoutAccordion = 'lkt-layout-accordion';
-    const LktTextAccordion = 'lkt-text-accordion';
-    const LktTextBanner = 'lkt-text-banner';
-    const LktLayoutBanner = 'lkt-layout-banner';
-    const LktText = 'lkt-text';
-    const LktLayout = 'lkt-layout';
-    const LktAnchor = 'lkt-anchor';
-    const LktButton = 'lkt-button';
-    const LktHeader = 'lkt-header';
-    const LktIcon = 'lkt-icon';
-    const LktIcons = 'lkt-icons';
-    const LktImage = 'lkt-image';
-
-    const Types = [
-        self::LktLayoutBox,
-        self::LktTextBox,
-        self::LktLayoutAccordion,
-        self::LktTextAccordion,
-        self::LktText,
-        self::LktLayout,
-        self::LktAnchor,
-        self::LktButton,
-        self::LktHeader,
-        self::LktIcon,
-        self::LktImage,
-    ];
+    case LktText = 1;
+    case LktTextBox = 2;
+    case LktLayout = 3;
+    case LktLayoutBox = 4;
+    case LktTextAccordion = 5;
+    case LktLayoutAccordion = 6;
+    case LktTextBanner = 7;
+    case LktLayoutBanner = 8;
+    case LktAnchor = 9;
+    case LktButton = 10;
+    case LktHeader = 11;
+    case LktIcon = 12;
+    case LktIcons = 13;
+    case LktImage = 14;
 }

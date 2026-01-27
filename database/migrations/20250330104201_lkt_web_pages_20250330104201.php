@@ -32,7 +32,7 @@ class LKtWebPages20250330104201 extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('lkt_web_pages', ['collation' => 'utf8_general_ci'])
+        $table = $this->table('lkt_web_pages', ['collation' => 'utf8mb4_unicode_ci'])
             ->addColumn('created_at', 'datetime', ['null' => true, 'default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('updated_at', 'datetime', ['null' => true, 'default' => null, 'update' => 'CURRENT_TIMESTAMP'])
             ->addColumn('published_at', 'datetime', ['null' => true, 'default' => null, 'update' => 'CURRENT_TIMESTAMP'])

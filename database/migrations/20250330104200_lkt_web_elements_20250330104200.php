@@ -32,12 +32,12 @@ class LKtWebElements20250330104200 extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('lkt_web_elements', ['collation' => 'utf8_general_ci'])
+        $table = $this->table('lkt_web_elements', ['collation' => 'utf8mb4_unicode_ci'])
             ->addColumn('created_at', 'datetime', ['null' => true, 'default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('updated_at', 'datetime', ['null' => true, 'default' => null, 'update' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_by', 'integer', ['default' => 0])
 
-            ->addColumn('type', 'string', ['limit' => 250])
+            ->addColumn('type', 'integer', ['limit' => MysqlAdapter::INT_REGULAR])
             ->addColumn('component', 'string', ['limit' => 250])
 
             ->addColumn('parent_id', 'integer', ['limit' => MysqlAdapter::INT_REGULAR])
