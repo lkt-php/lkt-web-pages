@@ -229,6 +229,36 @@ class SetupTranslationsCommand extends Command
             'en' => 'Default: End',
         ], $parentId);
 
+        $parent = LktTranslation::createIfMissing('accordionTypeOptions', TranslationType::Many, []);
+        $parentId = $parent->getId();
+        LktTranslation::createIfMissing('auto', TranslationType::Text, [
+            'es' => 'Por defecto',
+            'en' => 'Default',
+        ], $parentId);
+        LktTranslation::createIfMissing('always', TranslationType::Text, [
+            'es' => 'Siempre abierto',
+            'en' => 'Always opened',
+        ], $parentId);
+        LktTranslation::createIfMissing('lazy', TranslationType::Text, [
+            'es' => 'Carga lenta',
+            'en' => 'Lazy load',
+        ], $parentId);
+        LktTranslation::createIfMissing('ever', TranslationType::Text, [
+            'es' => 'Carga siempre',
+            'en' => 'Ever load',
+        ], $parentId);
+
+        $parent = LktTranslation::createIfMissing('bannerTypeOptions', TranslationType::Many, []);
+        $parentId = $parent->getId();
+        LktTranslation::createIfMissing('static', TranslationType::Text, [
+            'es' => 'Fondo estático',
+            'en' => 'Static background',
+        ], $parentId);
+        LktTranslation::createIfMissing('parallax', TranslationType::Text, [
+            'es' => 'Fondo paralelo',
+            'en' => 'Parallax background',
+        ], $parentId);
+
         return 1;
     }
 }
