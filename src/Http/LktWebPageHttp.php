@@ -5,6 +5,7 @@ namespace Lkt\WebPages\Http;
 use Lkt\Http\Response;
 use Lkt\Locale\Locale;
 use Lkt\Translations\Translations;
+use Lkt\WebPages\Enums\WebPageStatus;
 use Lkt\WebPages\LktWebElement;
 use Lkt\WebPages\LktWebPage;
 use function Lkt\Tools\Parse\clearInput;
@@ -71,7 +72,7 @@ class LktWebPageHttp
         $slug = $slug[count($slug) - 1];
 
         $query = LktWebPage::getQueryCaller();
-        $query->andSlugEqual($slug)->andStatusIsPublic();
+        $query->andSlugEqual($slug)->andStatusEqual(WebPageStatus::Public->value);
         $instance = LktWebPage::getOne($query);
         if (!$instance || $instance->isAnonymous()) return Response::notFound();
 
