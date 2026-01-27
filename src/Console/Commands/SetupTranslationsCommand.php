@@ -106,6 +106,26 @@ class SetupTranslationsCommand extends Command
         ], $parentId);
 
 
+        $parent = LktTranslation::createIfMissing('layoutEngines', TranslationType::Many, []);
+        $parentId = $parent->getId();
+        LktTranslation::createIfMissing('grid', TranslationType::Text, [
+            'es' => 'CSS Grid',
+            'en' => 'CSS Grid',
+        ], $parentId);
+        LktTranslation::createIfMissing('flex-row', TranslationType::Text, [
+            'es' => 'CSS Flex: Única Fila',
+            'en' => 'CSS Flex: Single Row',
+        ], $parentId);
+        LktTranslation::createIfMissing('flex-rows', TranslationType::Text, [
+            'es' => 'CSS Flex: Filas',
+            'en' => 'CSS Flex: Rows',
+        ], $parentId);
+        LktTranslation::createIfMissing('flex-column', TranslationType::Text, [
+            'es' => 'CSS Flex: Columna',
+            'en' => 'CSS Flex: Column',
+        ], $parentId);
+
+
         $parent = LktTranslation::createIfMissing('flexColumnsOptions', TranslationType::Many, []);
         $parentId = $parent->getId();
         LktTranslation::createIfMissing('lkt-flex-col-1', TranslationType::Text, [
