@@ -197,6 +197,38 @@ class SetupTranslationsCommand extends Command
             'en' => 'From 768px: 5',
         ], $parentId);
 
+
+        $parent = LktTranslation::createIfMissing('justifyContentOptions', TranslationType::Many, []);
+        $parentId = $parent->getId();
+        LktTranslation::createIfMissing('lkt-justify-content-stretch', TranslationType::Text, [
+            'es' => 'Por defecto: Ajustado',
+            'en' => 'Default: Stretch',
+        ], $parentId);
+        LktTranslation::createIfMissing('lkt-justify-content-center', TranslationType::Text, [
+            'es' => 'Por defecto: Centrado',
+            'en' => 'Default: Center',
+        ], $parentId);
+        LktTranslation::createIfMissing('lkt-justify-content-space-between', TranslationType::Text, [
+            'es' => 'Por defecto: Separar elementos',
+            'en' => 'Default: Space between',
+        ], $parentId);
+        LktTranslation::createIfMissing('lkt-justify-content-space-around', TranslationType::Text, [
+            'es' => 'Por defecto: Airear elementos',
+            'en' => 'Default: Space around',
+        ], $parentId);
+        LktTranslation::createIfMissing('lkt-justify-content-space-evenly', TranslationType::Text, [
+            'es' => 'Por defecto: Espacio equitativo',
+            'en' => 'Default: Space evenly',
+        ], $parentId);
+        LktTranslation::createIfMissing('lkt-justify-content-start', TranslationType::Text, [
+            'es' => 'Por defecto: Al inicio',
+            'en' => 'Default: Start',
+        ], $parentId);
+        LktTranslation::createIfMissing('lkt-justify-content-end', TranslationType::Text, [
+            'es' => 'Por defecto: Al final',
+            'en' => 'Default: End',
+        ], $parentId);
+
         return 1;
     }
 }
