@@ -126,6 +126,26 @@ class SetupTranslationsCommand extends Command
         ], $parentId);
 
 
+        $parent = LktTranslation::createIfMissing('alignItemsOptions', TranslationType::Many, []);
+        $parentId = $parent->getId();
+        LktTranslation::createIfMissing('lkt-align-items-start', TranslationType::Text, [
+            'es' => 'Por defecto: Inicio',
+            'en' => 'Default: Start',
+        ], $parentId);
+        LktTranslation::createIfMissing('lkt-align-items-center', TranslationType::Text, [
+            'es' => 'Por defecto: Centro',
+            'en' => 'Default: Center',
+        ], $parentId);
+        LktTranslation::createIfMissing('lkt-align-items-end', TranslationType::Text, [
+            'es' => 'Por defecto: Final',
+            'en' => 'Default: End',
+        ], $parentId);
+        LktTranslation::createIfMissing('lkt-align-items-stretch', TranslationType::Text, [
+            'es' => 'Por defecto: Estirado',
+            'en' => 'Default: Stretch',
+        ], $parentId);
+
+
         $parent = LktTranslation::createIfMissing('flexColumnsOptions', TranslationType::Many, []);
         $parentId = $parent->getId();
         LktTranslation::createIfMissing('lkt-flex-col-1', TranslationType::Text, [
